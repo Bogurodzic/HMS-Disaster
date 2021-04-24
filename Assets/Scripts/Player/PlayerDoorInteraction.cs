@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
 public class PlayerDoorInteraction : MonoBehaviour
 {
+    [SerializeField] private PlayerMovement _playerMovement;
     private GameObject _nearbyDoors;
+    private Vector3 _exitPosition;
     
     void Start()
     {
@@ -19,10 +22,29 @@ public class PlayerDoorInteraction : MonoBehaviour
 
     private void TryUseDoors()
     {
-        if (_nearbyDoors && Input.GetKeyDown(KeyCode.Space))
+        if (_nearbyDoors)
         {
-            transform.position = _nearbyDoors.GetComponent<Door>().exitDoors.transform.position;
+            Door door = _nearbyDoors.GetComponent<Door>();
+            KeyCode requiredKeyCodeToUseDoors = door.doorFloor == DoorFloor.LOWER
+                ? _playerMovement.upController
+                : _playerMovement.downController;
+            if (Input.GetKeyDown(requiredKeyCodeToUseDoors))
+            {
+                UseDoor(door);
+            }
         }
+    }
+
+    private void UseDoor(Door door)
+    {
+        _exitPosition = door.exitDoors.transform.position;
+        transform.position = new Vector3(9999, 9999, 9999);
+        Invoke("ExitDoor", 2f);
+    }
+
+    private void ExitDoor()
+    {
+        transform.position = _exitPosition;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
