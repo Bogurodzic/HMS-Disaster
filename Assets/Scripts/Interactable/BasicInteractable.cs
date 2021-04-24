@@ -7,8 +7,10 @@ public class BasicInteractable : MonoBehaviour
 {
     public int activationInterval;
     public int waitInterval;
+    public int damageOnExplode;
     
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private ShipHitpoints _shipHitpoints;
     private InteractableState _state = InteractableState.Deactivated;
     private bool _activationStarted;
     void Start()
@@ -62,6 +64,7 @@ public class BasicInteractable : MonoBehaviour
         if (_state == InteractableState.Activated)
         {
             Debug.Log("MACHINE EXPLODED");
+            _shipHitpoints.RecieveDamage(damageOnExplode);
             DeactivateMachine();
         }
         else
