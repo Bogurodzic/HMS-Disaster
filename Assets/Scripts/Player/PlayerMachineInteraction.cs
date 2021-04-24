@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class PlayerMachineInteraction : MonoBehaviour
 {
-    public KeyCode interactKey;
+    [SerializeField] private PlayerController _playerController;
     private BasicInteractable _nearbyMachine;
 
     public void Update()
     {
-        if (Input.GetKeyDown(interactKey) && _nearbyMachine)
+        if (Input.GetKeyDown(_playerController.activateButton) && _nearbyMachine)
         {
-            _nearbyMachine.Interact();
+            _nearbyMachine.Interact(_playerController);
         }
     }
 

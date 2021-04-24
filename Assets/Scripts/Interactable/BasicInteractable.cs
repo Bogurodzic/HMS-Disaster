@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class BasicInteractable : MonoBehaviour
 {
-    public int activationInterval;
-    public int waitInterval;
-    public int damageOnExplode;
-    
+    public Machines machine;
+
+    [SerializeField] private GameObject _minigamePanelPrefab;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private ShipHitpoints _shipHitpoints;
     private InteractableState _state = InteractableState.Deactivated;
@@ -23,7 +22,7 @@ public class BasicInteractable : MonoBehaviour
         if (!_activationStarted)
         {
             _activationStarted = true;
-            float activationTime = Random.Range(activationInterval/2, activationInterval);
+            float activationTime = Random.Range(machine.activationInterval/2, machine.activationInterval);
             Invoke("ActivateMachine", activationTime);
         }
 
@@ -40,16 +39,22 @@ public class BasicInteractable : MonoBehaviour
         }
     }
 
-    public void Interact()
+    public void Interact(PlayerController playerController)
     {
-        Debug.Log("Interact");
-        DeactivateMachine();
+        if (_state == InteractableState.Activated)
+        {
+            Debug.Log("Interact");
+            //DeactivateMachine();
+            _state = InteractableState.Blocked;
+            MiniGamePanel miniGamePanel = Instantiate(_minigamePanelPrefab, transform.position, transform.rotation).GetComponent<MiniGamePanel>();
+            miniGamePanel.InitialiseGame(playerController, machine.gameType);
+        }
     }
 
     private void ActivateMachine()
     {
         _state = InteractableState.Activated;
-        Invoke("Explode", waitInterval);
+        Invoke("Explode", machine.waitInterval);
     }
 
     private void DeactivateMachine()
@@ -64,7 +69,7 @@ public class BasicInteractable : MonoBehaviour
         if (_state == InteractableState.Activated)
         {
             Debug.Log("MACHINE EXPLODED");
-            _shipHitpoints.RecieveDamage(damageOnExplode);
+            _shipHitpoints.RecieveDamage(machine.damageOnExplode);
             DeactivateMachine();
         }
         else

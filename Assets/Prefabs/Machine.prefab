@@ -95,9 +95,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a45837995ee4a9e896c295140660e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activationInterval: 8
-  waitInterval: 3
+  activationInterval: 14
+  waitInterval: 5
   damageOnExplode: 5
+  _minigamePanelPrefab: {fileID: 1736509893663637679, guid: a826dab3ee5e647e4985f9fb49362b24,
+    type: 3}
   _spriteRenderer: {fileID: 3113517517474207294}
   _shipHitpoints: {fileID: 0}
 --- !u!61 &3113517517474207292
