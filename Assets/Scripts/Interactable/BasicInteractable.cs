@@ -38,6 +38,12 @@ public class BasicInteractable : MonoBehaviour
         }
     }
 
+    public void Interact()
+    {
+        Debug.Log("Interact");
+        DeactivateMachine();
+    }
+
     private void ActivateMachine()
     {
         _state = InteractableState.Activated;

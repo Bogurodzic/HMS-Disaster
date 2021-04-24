@@ -12,9 +12,14 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode rightController;
     public KeyCode upController;
     public KeyCode downController;
-    void Update()
+    void UpdateF()
+    {
+    }
+
+    private void FixedUpdate()
     {
         HandleMovingPlayerHorizontally();
+
     }
 
     private void HandleMovingPlayerHorizontally()
