@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerDoorInteraction : MonoBehaviour
 {
     [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private Rigidbody2D _playerRigidbody2D;
     private GameObject _nearbyDoors;
     private Vector3 _exitPosition;
     
@@ -44,6 +45,7 @@ public class PlayerDoorInteraction : MonoBehaviour
 
     private void ExitDoor()
     {
+        _playerRigidbody2D.velocity = Vector2.zero;
         transform.position = _exitPosition;
     }
 

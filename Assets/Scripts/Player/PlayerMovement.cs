@@ -12,9 +12,6 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode rightController;
     public KeyCode upController;
     public KeyCode downController;
-    
-    [SerializeField] private Rigidbody2D _playerRigidbody2D;
-    
     void Update()
     {
         HandleMovingPlayerHorizontally();
@@ -34,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(rightController))
             direction = 1;
         
-        _playerRigidbody2D.AddForce(new Vector2(direction, 0) * movementSpeed * Time.deltaTime, ForceMode2D.Force);
+        transform.Translate(direction * movementSpeed * Time.deltaTime, 0, 0);
     }
     
 }
