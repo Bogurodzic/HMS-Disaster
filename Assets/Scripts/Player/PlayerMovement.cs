@@ -24,16 +24,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        HandleClimbingLadder();
+        //HandleClimbingLadder();
         HandleMovingPlayerHorizontally();
     }
 
     private void HandleMovingPlayerHorizontally()
     {
-        if (!_duringLadderMovement)
-        {
+        //if (!_duringLadderMovement)
+        //{
             MovePlayerHorizontally();
-        }
+        //}
     }
 
     private void MovePlayerHorizontally()
