@@ -5,7 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField] private PlayerMovement _playerMovement;
+    public KeyCode upButton;
+    public KeyCode downButton;
+    public KeyCode leftButton;
+    public KeyCode rightButton;
+    public KeyCode activateButton;
     
     void Start()
     {

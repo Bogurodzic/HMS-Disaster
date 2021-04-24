@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerDoorInteraction : MonoBehaviour
 {
-    [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private PlayerController _playerController;
     [SerializeField] private Rigidbody2D _playerRigidbody2D;
     private GameObject _nearbyDoors;
     private Vector3 _exitPosition;
@@ -27,8 +27,8 @@ public class PlayerDoorInteraction : MonoBehaviour
         {
             Door door = _nearbyDoors.GetComponent<Door>();
             KeyCode requiredKeyCodeToUseDoors = door.doorFloor == DoorFloor.LOWER
-                ? _playerMovement.upController
-                : _playerMovement.downController;
+                ? _playerController.upButton
+                : _playerController.downButton;
             if (Input.GetKeyDown(requiredKeyCodeToUseDoors))
             {
                 UseDoor(door);

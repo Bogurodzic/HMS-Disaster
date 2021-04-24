@@ -7,11 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public float movementSpeed = 5000;
     public float ladderSpeed = 5;
-    
-    public KeyCode leftController;
-    public KeyCode rightController;
-    public KeyCode upController;
-    public KeyCode downController;
+
+    [SerializeField] private PlayerController _playerController;
     void UpdateF()
     {
     }
@@ -31,9 +28,9 @@ public class PlayerMovement : MonoBehaviour
     {
         float direction = 0;
 
-        if (Input.GetKey(leftController))
+        if (Input.GetKey(_playerController.leftButton))
             direction = -1;
-        if (Input.GetKey(rightController))
+        if (Input.GetKey(_playerController.rightButton))
             direction = 1;
         
         transform.Translate(direction * movementSpeed * Time.deltaTime, 0, 0);
