@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7803774882387560909}
   - component: {fileID: 2241028493509480019}
   - component: {fileID: 4089659557512459623}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 204094100994417621}
   - component: {fileID: 1509007995571468925}
   - component: {fileID: 619367377247713984}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: circle
   m_TagString: Zone
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 7908040117682597047}
   - component: {fileID: 7908040117682597046}
   - component: {fileID: 170186755878381203}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PumpMiniGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,4 +357,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 805500ba0954e472f812ed8ba2df8928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  requiredSuccess: 3
   _ball: {fileID: 7803774882387560909}

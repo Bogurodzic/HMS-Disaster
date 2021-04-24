@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3a8cd78b72c4f45aeb59e0f9f8ca73, type: 3}
   m_Name: Pump
   m_EditorClassIdentifier: 
-  activationInterval: 0
-  waitInterval: 0
-  damageOnExplode: 0
+  activationInterval: 15
+  waitInterval: 10
+  damageOnExplode: 10
   gameType: 0

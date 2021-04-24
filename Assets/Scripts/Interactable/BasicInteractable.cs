@@ -48,6 +48,18 @@ public class BasicInteractable : MonoBehaviour
             _state = InteractableState.Blocked;
             MiniGamePanel miniGamePanel = Instantiate(_minigamePanelPrefab, transform.position, transform.rotation).GetComponent<MiniGamePanel>();
             miniGamePanel.InitialiseGame(playerController, machine.gameType);
+            miniGamePanel.OnSuccess += success =>
+            {
+                if (success)
+                {
+                    DeactivateMachine();
+                }
+                else
+                {
+                    _shipHitpoints.RecieveDamage(machine.damageOnExplode);
+                    DeactivateMachine();
+                }
+            };
         }
     }
 

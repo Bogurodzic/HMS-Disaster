@@ -1,32 +1,53 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PumpMiniGame : MonoBehaviour
 {
+    public int requiredSuccess = 3;
+    public event Action<bool> OnSuccess = isSuccess => { };
+
+
     [SerializeField] private Ball _ball;
     private PlayerController _playerController;
     private bool _ballInZone = false;
     private bool _initalised = false;
+    private int _currentSuccess = 0;
+    private bool _pressReady = true;
     void Start()
     {
         _ball.ballInZone += ballInZone =>
         {
             _ballInZone = ballInZone;
+
+            if (!ballInZone)
+                _pressReady = true;
         };
     }
 
     void Update()
     {
-        if (_initalised && Input.GetKeyDown(_playerController.activateButton))
+        if (_initalised && Input.GetKeyDown(_playerController.activateButton) && _pressReady)
         {
             if (_ballInZone)
             {
+                _pressReady = false;
+                _currentSuccess = _currentSuccess + 1;
+
+                if (_currentSuccess >= requiredSuccess)
+                {
+                    OnSuccess(true);
+                    Destroy(gameObject);
+                }
+                
                 Debug.Log("NICE");
             }
             else
             {
-                Debug.Log("GUNWOOO");
+                Debug.Log("FAILED");
+                OnSuccess(false);
+                Destroy(gameObject);
             }
         }
     }
