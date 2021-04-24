@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [SerializeField] private PlayerMovement _playerMovement;
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
