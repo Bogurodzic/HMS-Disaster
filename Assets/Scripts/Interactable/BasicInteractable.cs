@@ -55,7 +55,7 @@ public class BasicInteractable : MonoBehaviour
         }
     }
 
-    protected void AddPlayerToOperateMachine(PlayerController playerController)
+    protected virtual void AddPlayerToOperateMachine(PlayerController playerController)
     {
         playerController.SetPlayerStatus(PlayerStatus.Busy);
         _playerControllers.Add(playerController);

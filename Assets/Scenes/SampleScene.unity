@@ -121,6 +121,35 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &78465660 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3113517517474207280, guid: f1359ad1ca6f8451c892066b65997cdb,
+    type: 3}
+  m_PrefabInstance: {fileID: 139271653}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &78465661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78465660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e44d3969c6aa542ab827edf6d4b5b2c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  machine: {fileID: 11400000, guid: cbfb50e9524154c76b0e1469071900ed, type: 2}
+  _minigamePanelPrefab: {fileID: 1736509893663637679, guid: a826dab3ee5e647e4985f9fb49362b24,
+    type: 3}
+  _spriteRenderer: {fileID: 78465663}
+  _shipHitpoints: {fileID: 671433531}
+--- !u!212 &78465663 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3113517517474207294, guid: f1359ad1ca6f8451c892066b65997cdb,
+    type: 3}
+  m_PrefabInstance: {fileID: 139271653}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &78465664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3113517517474207295, guid: f1359ad1ca6f8451c892066b65997cdb,
@@ -351,12 +380,12 @@ PrefabInstance:
         type: 3}
       propertyPath: machine
       value: 
-      objectReference: {fileID: 11400000, guid: 1fcff1309278c49adb4558b5066281d0,
+      objectReference: {fileID: 11400000, guid: cbfb50e9524154c76b0e1469071900ed,
         type: 2}
     - target: {fileID: 3113517517474207281, guid: f1359ad1ca6f8451c892066b65997cdb,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3113517517474207281, guid: f1359ad1ca6f8451c892066b65997cdb,
         type: 3}
@@ -470,7 +499,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3113517517474207281, guid: f1359ad1ca6f8451c892066b65997cdb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f1359ad1ca6f8451c892066b65997cdb, type: 3}
 --- !u!4 &254178729 stripped
 Transform:
