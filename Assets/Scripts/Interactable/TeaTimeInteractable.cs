@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TeaTimeInteractable : BasicInteractable
 {
     public float teatimeDuration;
+
+    [SerializeField] private Text _text;
+    [SerializeField] private Canvas _canvas;
 
     protected override void AddPlayerToOperateMachine(PlayerController playerController)
     {
@@ -22,8 +26,25 @@ public class TeaTimeInteractable : BasicInteractable
             playerController.Drink();
         }
 
-        Debug.Log("PLAYER PIJE");
+        FirstText();
+        Invoke("SecondText", teatimeDuration/3);
+        Invoke("ThirdText", (teatimeDuration/3) * 2);
         Invoke("EndDrinking", teatimeDuration);
+    }
+
+    private void FirstText()
+    {
+        _text.text = "I bet tomorrow will be raining...";
+    }
+
+    private void SecondText()
+    {
+        _text.text = "Why?";
+    }
+
+    private void ThirdText()
+    {
+        _text.text = "Because pressure has changed.";
     }
 
     private void EndDrinking()
@@ -35,5 +56,6 @@ public class TeaTimeInteractable : BasicInteractable
         }
         
         DeactivateMachine();
+        _text.text = "";
     }
 }
