@@ -7,20 +7,20 @@ public class BasicInteractable : MonoBehaviour
 {
     public Machines machine;
 
-    [SerializeField] private GameObject _minigamePanelPrefab;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private ShipHitpoints _shipHitpoints;
+    [SerializeField] protected GameObject _minigamePanelPrefab;
+    [SerializeField] protected SpriteRenderer _spriteRenderer;
+    [SerializeField] protected ShipHitpoints _shipHitpoints;
     
-    private InteractableState _state = InteractableState.Deactivated;
+    protected InteractableState _state = InteractableState.Deactivated;
     
-    private bool _activationStarted;
-    private List<PlayerController> _playerControllers = new List<PlayerController>();
-    void Start()
+    protected bool _activationStarted;
+    protected List<PlayerController> _playerControllers = new List<PlayerController>();
+    public void Start()
     {
         
     }
     
-    void Update()
+    public virtual void Update()
     {
         if (!_activationStarted)
         {
@@ -55,18 +55,18 @@ public class BasicInteractable : MonoBehaviour
         }
     }
 
-    private void AddPlayerToOperateMachine(PlayerController playerController)
+    protected void AddPlayerToOperateMachine(PlayerController playerController)
     {
         playerController.SetPlayerStatus(PlayerStatus.Busy);
         _playerControllers.Add(playerController);
     }
 
-    private bool CheckIfMachineCanBeStarted()
+    protected bool CheckIfMachineCanBeStarted()
     {
         return machine.playersRequired == _playerControllers.Count;
     }
 
-    private void RunMinigame()
+    protected void RunMinigame()
     {
         MiniGamePanel miniGamePanel = Instantiate(_minigamePanelPrefab, transform.position, transform.rotation).GetComponent<MiniGamePanel>();
         miniGamePanel.InitialiseGame(_playerControllers, machine.gameType);
@@ -84,13 +84,13 @@ public class BasicInteractable : MonoBehaviour
         };
     }
 
-    private void ActivateMachine()
+    protected virtual void ActivateMachine()
     {
         _state = InteractableState.Activated;
         Invoke("Explode", machine.waitInterval);
     }
 
-    private void DeactivateMachine()
+    protected virtual void DeactivateMachine()
     {
         _activationStarted = false;
         _state = InteractableState.Deactivated;
@@ -102,12 +102,17 @@ public class BasicInteractable : MonoBehaviour
         }
     }
 
-    private void Explode()
+    protected void Explode()
     {
         if (_state == InteractableState.Activated)
         {
             _shipHitpoints.RecieveDamage(machine.damageOnExplode);
             DeactivateMachine();
         }
+    }
+
+    public void SetState(InteractableState state)
+    {
+        _state = state;
     }
 }

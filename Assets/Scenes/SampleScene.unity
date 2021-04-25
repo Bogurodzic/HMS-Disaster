@@ -500,7 +500,7 @@ PrefabInstance:
         type: 3}
       propertyPath: machine
       value: 
-      objectReference: {fileID: 11400000, guid: 1fcff1309278c49adb4558b5066281d0,
+      objectReference: {fileID: 11400000, guid: f66afba00bca34ce5832c6c0eca05d06,
         type: 2}
     - target: {fileID: 3113517517474207281, guid: f1359ad1ca6f8451c892066b65997cdb,
         type: 3}
@@ -673,7 +673,7 @@ PrefabInstance:
     - target: {fileID: 3113517517474207280, guid: f1359ad1ca6f8451c892066b65997cdb,
         type: 3}
       propertyPath: m_Name
-      value: Machine (3)
+      value: Periscope
       objectReference: {fileID: 0}
     - target: {fileID: 3113517517474207281, guid: f1359ad1ca6f8451c892066b65997cdb,
         type: 3}
@@ -757,7 +757,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3113517517474207281, guid: f1359ad1ca6f8451c892066b65997cdb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f1359ad1ca6f8451c892066b65997cdb, type: 3}
 --- !u!1001 &620191538
 PrefabInstance:
@@ -1053,13 +1054,13 @@ PrefabInstance:
     - target: {fileID: 3113517517474207280, guid: f1359ad1ca6f8451c892066b65997cdb,
         type: 3}
       propertyPath: m_Name
-      value: Machine (1)
+      value: Helm
       objectReference: {fileID: 0}
     - target: {fileID: 3113517517474207281, guid: f1359ad1ca6f8451c892066b65997cdb,
         type: 3}
       propertyPath: machine
       value: 
-      objectReference: {fileID: 11400000, guid: f66afba00bca34ce5832c6c0eca05d06,
+      objectReference: {fileID: 11400000, guid: 09eceecc0ba83448c9b235fedc087b66,
         type: 2}
     - target: {fileID: 3113517517474207281, guid: f1359ad1ca6f8451c892066b65997cdb,
         type: 3}
@@ -1121,7 +1122,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3113517517474207281, guid: f1359ad1ca6f8451c892066b65997cdb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f1359ad1ca6f8451c892066b65997cdb, type: 3}
 --- !u!1 &989324240 stripped
 GameObject:
@@ -1402,6 +1404,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerController: {fileID: 1513430789}
+--- !u!1 &1524764202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3113517517474207280, guid: f1359ad1ca6f8451c892066b65997cdb,
+    type: 3}
+  m_PrefabInstance: {fileID: 602454322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1524764203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524764202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f0330df42f3d4620bd5a7ee9ced4392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  machine: {fileID: 11400000, guid: 0b177088b021d40bcad63d696f9a78f6, type: 2}
+  _minigamePanelPrefab: {fileID: 1736509893663637679, guid: a826dab3ee5e647e4985f9fb49362b24,
+    type: 3}
+  _spriteRenderer: {fileID: 1524764205}
+  _shipHitpoints: {fileID: 671433531}
+--- !u!212 &1524764205 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3113517517474207294, guid: f1359ad1ca6f8451c892066b65997cdb,
+    type: 3}
+  m_PrefabInstance: {fileID: 602454322}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1524764206 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3113517517474207295, guid: f1359ad1ca6f8451c892066b65997cdb,
@@ -1668,6 +1699,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1808796891}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1892848334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3113517517474207280, guid: f1359ad1ca6f8451c892066b65997cdb,
+    type: 3}
+  m_PrefabInstance: {fileID: 961042954}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1892848336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892848334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ce35342b70047738fe80a8dd6c4ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  machine: {fileID: 11400000, guid: 09eceecc0ba83448c9b235fedc087b66, type: 2}
+  _minigamePanelPrefab: {fileID: 1736509893663637679, guid: a826dab3ee5e647e4985f9fb49362b24,
+    type: 3}
+  _spriteRenderer: {fileID: 1892848337}
+  _shipHitpoints: {fileID: 671433531}
+  _periscopeInteractable: {fileID: 0}
+--- !u!212 &1892848337 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3113517517474207294, guid: f1359ad1ca6f8451c892066b65997cdb,
+    type: 3}
+  m_PrefabInstance: {fileID: 961042954}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1892848338 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3113517517474207295, guid: f1359ad1ca6f8451c892066b65997cdb,
@@ -1680,36 +1741,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6246957932037762889}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1976892493
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1976892494}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1976892494
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1976892493}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04056165, y: 0.6487549, z: -37.522003}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2005620433 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5079798145087406272, guid: 7336c7202f1b04471aaa9f24d7ca3c4b,
