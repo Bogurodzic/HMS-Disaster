@@ -46,10 +46,10 @@ public class BasicInteractable : MonoBehaviour
     {
         if (_state == InteractableState.Activated)
         {
-            _state = InteractableState.Blocked;
             AddPlayerToOperateMachine(playerController);
             if (CheckIfMachineCanBeStarted())
             {
+                _state = InteractableState.Blocked;
                 RunMinigame();
             }
         }
