@@ -8,6 +8,7 @@ public class MiniGamePanel : MonoBehaviour
 {
     public GameObject pumpMiniGame;
     public GameObject valveMiniGame;
+    public GameObject helmMiniGame;
     public event Action<bool> OnSuccess = success => { };
 
     
@@ -53,6 +54,18 @@ public class MiniGamePanel : MonoBehaviour
                 valveMiniGameInstace.OnSuccess += succes =>
                 {
                     OnSuccess(succes);
+                    Destroy(gameObject);
+                };
+                break;
+            case GameType.HELM:
+                HelmMiniGame helmMiniGameInstace = Instantiate(helmMiniGame, transform.position, transform.rotation).GetComponent<HelmMiniGame>();
+                helmMiniGameInstace.transform.parent = gameObject.transform;
+                helmMiniGameInstace.Initialise(_playerControllers);
+                
+                helmMiniGameInstace.OnSuccess += succes =>
+                {
+                    OnSuccess(succes);
+                    Debug.Log(succes);
                     Destroy(gameObject);
                 };
                 break;

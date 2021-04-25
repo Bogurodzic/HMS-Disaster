@@ -47,3 +47,5 @@ MonoBehaviour:
     type: 3}
   valveMiniGame: {fileID: 650507615181058797, guid: aacb22d6cb5c84339904c8e0bdf0151d,
     type: 3}
+  helmMiniGame: {fileID: 2065155140902978138, guid: 7a0815378a54540edb2fd21ab0dfea25,
+    type: 3}
