@@ -10,8 +10,11 @@ public class BasicInteractable : MonoBehaviour
     [SerializeField] private GameObject _minigamePanelPrefab;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private ShipHitpoints _shipHitpoints;
+    
     private InteractableState _state = InteractableState.Deactivated;
+    
     private bool _activationStarted;
+    private List<PlayerController> _playerControllers = new List<PlayerController>();
     void Start()
     {
         
@@ -43,24 +46,41 @@ public class BasicInteractable : MonoBehaviour
     {
         if (_state == InteractableState.Activated)
         {
-            Debug.Log("Interact");
-            //DeactivateMachine();
             _state = InteractableState.Blocked;
-            MiniGamePanel miniGamePanel = Instantiate(_minigamePanelPrefab, transform.position, transform.rotation).GetComponent<MiniGamePanel>();
-            miniGamePanel.InitialiseGame(playerController, machine.gameType);
-            miniGamePanel.OnSuccess += success =>
+            AddPlayerToOperateMachine(playerController);
+            if (CheckIfMachineCanBeStarted())
             {
-                if (success)
-                {
-                    DeactivateMachine();
-                }
-                else
-                {
-                    _shipHitpoints.RecieveDamage(machine.damageOnExplode);
-                    DeactivateMachine();
-                }
-            };
+                RunMinigame();
+            }
         }
+    }
+
+    private void AddPlayerToOperateMachine(PlayerController playerController)
+    {
+        _playerControllers.Add(playerController);
+    }
+
+    private bool CheckIfMachineCanBeStarted()
+    {
+        return machine.playersRequired == _playerControllers.Count;
+    }
+
+    private void RunMinigame()
+    {
+        MiniGamePanel miniGamePanel = Instantiate(_minigamePanelPrefab, transform.position, transform.rotation).GetComponent<MiniGamePanel>();
+        miniGamePanel.InitialiseGame(_playerControllers, machine.gameType);
+        miniGamePanel.OnSuccess += success =>
+        {
+            if (success)
+            {
+                DeactivateMachine();
+            }
+            else
+            {
+                _shipHitpoints.RecieveDamage(machine.damageOnExplode);
+                DeactivateMachine();
+            }
+        };
     }
 
     private void ActivateMachine()

@@ -10,7 +10,7 @@ public class MiniGamePanel : MonoBehaviour
     public event Action<bool> OnSuccess = success => { };
 
     
-    private PlayerController _playerController;
+    private List<PlayerController> _playerControllers = new List<PlayerController>();
     private GameType _gameType;
 
     void Start()
@@ -23,9 +23,9 @@ public class MiniGamePanel : MonoBehaviour
         
     }
 
-    public void InitialiseGame(PlayerController playerController, GameType gameType)
+    public void InitialiseGame(List<PlayerController> playerControllers, GameType gameType)
     {
-        _playerController = playerController;
+        _playerControllers = playerControllers;
         _gameType = gameType;
         StartMiniGame();
     }
@@ -36,7 +36,7 @@ public class MiniGamePanel : MonoBehaviour
         {
             case GameType.PUMP:
                 PumpMiniGame pumpMiniGameInstance = Instantiate(pumpMiniGame, transform.position, transform.rotation).GetComponent<PumpMiniGame>();
-                pumpMiniGameInstance.Initialise(_playerController);
+                pumpMiniGameInstance.Initialise(_playerControllers);
                 
                 pumpMiniGameInstance.OnSuccess += succes =>
                 {

@@ -9,6 +9,7 @@ public class Machines : ScriptableObject
     public int activationInterval;
     public int waitInterval;
     public int damageOnExplode;
+    public int playersRequired;
     public GameType gameType;
 }
 

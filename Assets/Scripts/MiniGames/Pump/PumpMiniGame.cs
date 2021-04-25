@@ -52,9 +52,9 @@ public class PumpMiniGame : MonoBehaviour
         }
     }
 
-    public void Initialise(PlayerController playerController)
+    public void Initialise(List<PlayerController> playerControllers)
     {
-        _playerController = playerController;
+        _playerController = playerControllers[0];
         _initalised = true;
     }
 }
