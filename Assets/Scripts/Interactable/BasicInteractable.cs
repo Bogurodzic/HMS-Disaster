@@ -100,6 +100,8 @@ public class BasicInteractable : MonoBehaviour
         {
             playerController.SetPlayerStatus(PlayerStatus.Free);
         }
+        
+        _playerControllers.Clear();
     }
 
     protected void Explode()

@@ -61,6 +61,8 @@ public class HelmInteractable : BasicInteractable
         {
             playerController.SetPlayerStatus(PlayerStatus.Free);
         }
+        
+        _playerControllers.Clear();
     }
     
     public override void Interact(PlayerController playerController)
