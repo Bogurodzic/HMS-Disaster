@@ -7,6 +7,7 @@ using UnityEngine;
 public class MiniGamePanel : MonoBehaviour
 {
     public GameObject pumpMiniGame;
+    public GameObject valveMiniGame;
     public event Action<bool> OnSuccess = success => { };
 
     
@@ -39,6 +40,16 @@ public class MiniGamePanel : MonoBehaviour
                 pumpMiniGameInstance.Initialise(_playerControllers);
                 
                 pumpMiniGameInstance.OnSuccess += succes =>
+                {
+                    OnSuccess(succes);
+                    Destroy(gameObject);
+                };
+                break;
+            case GameType.VALVE:
+                ValveMiniGame valveMiniGameInstace = Instantiate(valveMiniGame, transform.position, transform.rotation).GetComponent<ValveMiniGame>();
+                valveMiniGameInstace.Initialise(_playerControllers);
+                
+                valveMiniGameInstace.OnSuccess += succes =>
                 {
                     OnSuccess(succes);
                     Destroy(gameObject);
