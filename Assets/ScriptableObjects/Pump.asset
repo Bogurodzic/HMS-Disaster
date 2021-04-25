@@ -15,4 +15,5 @@ MonoBehaviour:
   activationInterval: 15
   waitInterval: 10
   damageOnExplode: 10
+  playersRequired: 1
   gameType: 0

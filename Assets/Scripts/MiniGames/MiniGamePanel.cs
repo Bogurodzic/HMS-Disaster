@@ -38,7 +38,7 @@ public class MiniGamePanel : MonoBehaviour
             case GameType.PUMP:
                 PumpMiniGame pumpMiniGameInstance = Instantiate(pumpMiniGame, transform.position, transform.rotation).GetComponent<PumpMiniGame>();
                 pumpMiniGameInstance.Initialise(_playerControllers);
-                
+                pumpMiniGameInstance.transform.parent = gameObject.transform;
                 pumpMiniGameInstance.OnSuccess += succes =>
                 {
                     OnSuccess(succes);
@@ -47,6 +47,7 @@ public class MiniGamePanel : MonoBehaviour
                 break;
             case GameType.VALVE:
                 ValveMiniGame valveMiniGameInstace = Instantiate(valveMiniGame, transform.position, transform.rotation).GetComponent<ValveMiniGame>();
+                valveMiniGameInstace.transform.parent = gameObject.transform;
                 valveMiniGameInstace.Initialise(_playerControllers);
                 
                 valveMiniGameInstace.OnSuccess += succes =>

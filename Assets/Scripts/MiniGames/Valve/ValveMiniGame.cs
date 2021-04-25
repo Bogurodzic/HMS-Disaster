@@ -33,6 +33,12 @@ public class ValveMiniGame : MonoBehaviour
     {
         _playerControllers = playerControllers;
         _initalised = true;
+
+        _valveSliders[0].transform.position =
+            Camera.main.WorldToScreenPoint(transform.parent.position + new Vector3(-1, 0, 0));
+        _valveSliders[1].transform.position =
+            Camera.main.WorldToScreenPoint(transform.parent.position + new Vector3(1, 0, 0));
+        //Slider.transform.position = Camera.main.
     }
 
     public bool IsInitialised()
