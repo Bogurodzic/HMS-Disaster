@@ -15,5 +15,5 @@ MonoBehaviour:
   activationInterval: 0
   waitInterval: 0
   damageOnExplode: 0
-  playersRequired: 0
-  gameType: 0
+  playersRequired: 1
+  gameType: 2

@@ -506,6 +506,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _helmMiniGame: {fileID: 4156894908002430977}
+  _spawningPoints:
+  - {fileID: 501977561749752061}
+  - {fileID: 7792390721444576768}
+  - {fileID: 4925650539564868071}
 --- !u!1 &7792390721444576768
 GameObject:
   m_ObjectHideFlags: 0

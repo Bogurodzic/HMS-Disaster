@@ -25,6 +25,11 @@ public class HelmMiniGame : MonoBehaviour
         _initalised = true;
     }
 
+    public PlayerController GetPlayerController()
+    {
+        return _playerController;
+    }
+
     public void EmitSuccess(bool success)
     {
         OnSuccess(success);
