@@ -99,7 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c39356f2f124d90b084ddb0f50f64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerMovement: {fileID: 281429493121138634}
+  upButton: 0
+  downButton: 0
+  leftButton: 0
+  rightButton: 0
+  activateButton: 0
 --- !u!114 &281429493121138634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,10 +118,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 2
   ladderSpeed: 1
-  leftController: 276
-  rightController: 275
-  upController: 273
-  downController: 274
+  _playerController: {fileID: 0}
+  _sprite: {fileID: 0}
+  _animator: {fileID: 0}
 --- !u!61 &281429493121138637
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -156,7 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72d65f806dc44fddb07d934870d6cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerMovement: {fileID: 281429493121138634}
+  doorTravelDuration: 2
+  _playerController: {fileID: 0}
   _playerRigidbody2D: {fileID: 6183602782895759614}
 --- !u!50 &6183602782895759614
 Rigidbody2D:

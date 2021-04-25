@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerDoorInteraction : MonoBehaviour
 {
+    public float doorTravelDuration = 2;
+
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private Rigidbody2D _playerRigidbody2D;
     private GameObject _nearbyDoors;
@@ -40,7 +42,7 @@ public class PlayerDoorInteraction : MonoBehaviour
     {
         _exitPosition = door.exitDoors.transform.position;
         transform.position = new Vector3(9999, 9999, 9999);
-        Invoke("ExitDoor", 2f);
+        Invoke("ExitDoor", doorTravelDuration);
     }
 
     private void ExitDoor()
