@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public KeyCode rightButton;
     public KeyCode activateButton;
 
+    [SerializeField] private Animator _animator;
     private PlayerStatus _playerStatus = PlayerStatus.Free;
 
     public void SetPlayerStatus(PlayerStatus playerStatus)
@@ -27,5 +28,21 @@ public class PlayerController : MonoBehaviour
     public bool CanPlayerMove()
     {
         return GetPlayerStatus() == PlayerStatus.Free;
+    }
+
+    public void Sit()
+    {
+        _animator.SetBool("isSitting", true);
+    }
+
+    public void Drink()
+    {
+        _animator.SetBool("isDrinking", true);
+    }
+
+    public void StopDrinking()
+    {
+        _animator.SetBool("isDrinking", false);
+        _animator.SetBool("isSitting", false);
     }
 }

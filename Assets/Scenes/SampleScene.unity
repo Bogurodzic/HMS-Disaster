@@ -144,6 +144,7 @@ MonoBehaviour:
     type: 3}
   _spriteRenderer: {fileID: 78465663}
   _shipHitpoints: {fileID: 671433531}
+  teatimeDuration: 6
 --- !u!212 &78465663 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3113517517474207294, guid: f1359ad1ca6f8451c892066b65997cdb,
@@ -156,6 +157,32 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 139271653}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &78465665
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78465660}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.5783346, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.62, y: 0.66}
+    newSize: {x: 1.92, y: 2.58}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.46333063, y: 0.66}
+  m_EdgeRadius: 0
 --- !u!1 &85505187
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,27 +438,27 @@ PrefabInstance:
     - target: {fileID: 3113517517474207292, guid: f1359ad1ca6f8451c892066b65997cdb,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.6985602
+      value: 0.46758693
       objectReference: {fileID: 0}
     - target: {fileID: 3113517517474207292, guid: f1359ad1ca6f8451c892066b65997cdb,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.74694085
+      value: 0.684288
       objectReference: {fileID: 0}
     - target: {fileID: 3113517517474207292, guid: f1359ad1ca6f8451c892066b65997cdb,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.00000011920929
+      value: 0.59143984
       objectReference: {fileID: 0}
     - target: {fileID: 3113517517474207292, guid: f1359ad1ca6f8451c892066b65997cdb,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.039824367
+      value: 0.008497953
       objectReference: {fileID: 0}
     - target: {fileID: 3113517517474207292, guid: f1359ad1ca6f8451c892066b65997cdb,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.6
+      value: 1.62
       objectReference: {fileID: 0}
     - target: {fileID: 3113517517474207292, guid: f1359ad1ca6f8451c892066b65997cdb,
         type: 3}
@@ -632,6 +659,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2113948975649182683, guid: 9c6fd03a33ac54ec48692f556744f74e,
         type: 3}
+    - target: {fileID: 281429493121138632, guid: 183a744f4f6bd4561976bb58028969d2,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 281429493121138633, guid: 183a744f4f6bd4561976bb58028969d2,
         type: 3}
       propertyPath: m_RootOrder
@@ -732,6 +764,11 @@ PrefabInstance:
       propertyPath: upButton
       value: 119
       objectReference: {fileID: 0}
+    - target: {fileID: 281429493121138635, guid: 183a744f4f6bd4561976bb58028969d2,
+        type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1450306136}
     - target: {fileID: 281429493121138635, guid: 183a744f4f6bd4561976bb58028969d2,
         type: 3}
       propertyPath: downButton
@@ -2701,6 +2738,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 610745684323641927, guid: 241af9c71a22c4152b03b339c43a1fc4,
         type: 3}
+    - target: {fileID: 281429493121138632, guid: 183a744f4f6bd4561976bb58028969d2,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 281429493121138633, guid: 183a744f4f6bd4561976bb58028969d2,
         type: 3}
       propertyPath: m_RootOrder
@@ -2776,6 +2818,11 @@ PrefabInstance:
       propertyPath: upButton
       value: 273
       objectReference: {fileID: 0}
+    - target: {fileID: 281429493121138635, guid: 183a744f4f6bd4561976bb58028969d2,
+        type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1513430794}
     - target: {fileID: 281429493121138635, guid: 183a744f4f6bd4561976bb58028969d2,
         type: 3}
       propertyPath: downButton
