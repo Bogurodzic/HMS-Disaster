@@ -18,9 +18,7 @@ public class PeriscopeInteractable : BasicInteractable
                 _spriteRenderer.color = Color.red;
             }
         }
-        else
-        {
-            _spriteRenderer.color = Color.white;
-        }
     }
+    
+    
 }

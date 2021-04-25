@@ -42,7 +42,7 @@ public class BasicInteractable : MonoBehaviour
         }
     }
 
-    public void Interact(PlayerController playerController)
+    public virtual void Interact(PlayerController playerController)
     {
         if (_state == InteractableState.Activated)
         {
@@ -66,7 +66,7 @@ public class BasicInteractable : MonoBehaviour
         return machine.playersRequired == _playerControllers.Count;
     }
 
-    protected void RunMinigame()
+    protected virtual void RunMinigame()
     {
         MiniGamePanel miniGamePanel = Instantiate(_minigamePanelPrefab, transform.position, transform.rotation).GetComponent<MiniGamePanel>();
         miniGamePanel.InitialiseGame(_playerControllers, machine.gameType);
@@ -90,7 +90,7 @@ public class BasicInteractable : MonoBehaviour
         Invoke("Explode", machine.waitInterval);
     }
 
-    protected virtual void DeactivateMachine()
+    public virtual void DeactivateMachine()
     {
         _activationStarted = false;
         _state = InteractableState.Deactivated;
@@ -114,5 +114,10 @@ public class BasicInteractable : MonoBehaviour
     public void SetState(InteractableState state)
     {
         _state = state;
+    }
+
+    public InteractableState GetState()
+    {
+        return _state;
     }
 }

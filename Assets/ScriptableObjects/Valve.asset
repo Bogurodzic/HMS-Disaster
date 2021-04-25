@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3a8cd78b72c4f45aeb59e0f9f8ca73, type: 3}
   m_Name: Valve
   m_EditorClassIdentifier: 
-  activationInterval: 10
+  activationInterval: 40
   waitInterval: 20
   damageOnExplode: 5
   playersRequired: 2
