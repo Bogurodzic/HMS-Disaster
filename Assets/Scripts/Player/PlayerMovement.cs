@@ -21,7 +21,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovingPlayerHorizontally()
     {
-        MovePlayerHorizontally();
+        if (_playerController.CanPlayerMove())
+        {
+            MovePlayerHorizontally();
+        }
     }
 
     private void MovePlayerHorizontally()

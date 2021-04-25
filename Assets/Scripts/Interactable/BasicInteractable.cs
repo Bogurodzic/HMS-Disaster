@@ -57,6 +57,7 @@ public class BasicInteractable : MonoBehaviour
 
     private void AddPlayerToOperateMachine(PlayerController playerController)
     {
+        playerController.SetPlayerStatus(PlayerStatus.Busy);
         _playerControllers.Add(playerController);
     }
 
@@ -94,19 +95,19 @@ public class BasicInteractable : MonoBehaviour
         _activationStarted = false;
         _state = InteractableState.Deactivated;
         _spriteRenderer.color = Color.white;
+        
+        foreach (var playerController in _playerControllers)
+        {
+            playerController.SetPlayerStatus(PlayerStatus.Free);
+        }
     }
 
     private void Explode()
     {
         if (_state == InteractableState.Activated)
         {
-            Debug.Log("MACHINE EXPLODED");
             _shipHitpoints.RecieveDamage(machine.damageOnExplode);
             DeactivateMachine();
-        }
-        else
-        {
-            Debug.Log("Nothing Happend");
         }
     }
 }

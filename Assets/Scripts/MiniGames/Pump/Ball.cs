@@ -12,16 +12,10 @@ public class Ball : MonoBehaviour
     public event Action<bool> ballInZone = isBallInZone => { };
     
     private Vector3 zAxis = new Vector3(0, 0, 1);
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
-        transform.RotateAround(target.position, zAxis, speed); 
-
-        //transform.RotateAround(point, axis, Time.deltaTime * 10);
+        transform.RotateAround(target.position, zAxis, speed);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
