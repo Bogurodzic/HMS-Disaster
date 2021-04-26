@@ -5,7 +5,7 @@ using UnityEngine;
 public static class Score
 {
     private static float _score;
-    private static float _currentScoreMultiplier = 1;
+    private static float _currentScoreMultiplier = 1.5f;
 
     public static void AddScore(int score)
     {

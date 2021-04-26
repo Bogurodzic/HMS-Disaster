@@ -19,6 +19,7 @@ public class TeaTimeInteractable : BasicInteractable
     [SerializeField] private Image _textboxImage;
     [SerializeField] private AudioController _audioController;
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private QuunOMeter _quunOMeter;
     private int _difficultCounter = 0;
 
     public override void Update()
@@ -75,6 +76,7 @@ public class TeaTimeInteractable : BasicInteractable
             } 
             _spriteRenderer.sprite = tableWithCups;
             IncreaseLevel();
+            _quunOMeter.PissQueen();
         }
     }
 
@@ -87,7 +89,8 @@ public class TeaTimeInteractable : BasicInteractable
         {
             playerController.Drink();
         }
-
+        
+        _alarmController.TurnOff();
         FirstText();
         Invoke("SecondText", teatimeDuration/3);
         Invoke("ThirdText", (teatimeDuration/3) * 2);
@@ -96,6 +99,7 @@ public class TeaTimeInteractable : BasicInteractable
 
     private void FirstText()
     {
+        _alarmController.TurnOff();
         _textbox.SetActive(true);
         _text.text = "I bet tomorrow will be raining...";
         ChangeTextboxWidth(_text.text.Length);
@@ -127,6 +131,7 @@ public class TeaTimeInteractable : BasicInteractable
         IncreaseLevel();
         Score.AddScore(DifficultLevel.GetDifficultLevel() * 5);
         _audioController.PlayNormalMusic();
+        _quunOMeter.SatisfyQueen();
     }
 
     private void IncreaseLevel()
