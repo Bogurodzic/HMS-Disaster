@@ -8,6 +8,7 @@ public class PlayerDoorInteraction : MonoBehaviour
 {
     public float doorTravelDuration = 2;
     public AudioClip doorSound;
+    public AudioClip stepsSound;
 
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private Rigidbody2D _playerRigidbody2D;
@@ -47,7 +48,14 @@ public class PlayerDoorInteraction : MonoBehaviour
         _audioSource.Play();
         _exitPosition = door.exitDoors.transform.position;
         transform.position = new Vector3(9999, 9999, 9999);
+        Invoke("PlaySteps", 0.38f);
         Invoke("ExitDoor", doorTravelDuration);
+    }
+
+    private void PlaySteps()
+    {
+        _audioSource.clip = stepsSound;
+        _audioSource.Play();
     }
 
     private void ExitDoor()
