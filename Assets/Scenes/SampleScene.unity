@@ -265,6 +265,7 @@ MonoBehaviour:
   _canvas: {fileID: 535737431}
   _textbox: {fileID: 893139914}
   _textboxImage: {fileID: 893139916}
+  _audioController: {fileID: 1315296190}
 --- !u!212 &78465663 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3113517517474207294, guid: f1359ad1ca6f8451c892066b65997cdb,
@@ -2062,7 +2063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &893139915
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2995,6 +2996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1315296189}
   - component: {fileID: 1315296188}
+  - component: {fileID: 1315296190}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -3112,6 +3114,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1315296190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315296187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 546cf35ddaa8f48feadac189d9c62a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSoure: {fileID: 1315296188}
+  normalMusic: {fileID: 8300000, guid: c094a26e0ae6b4dc1ac216fffc9dae38, type: 3}
+  teaTimeMusic: {fileID: 8300000, guid: 16a433bacffe84673a36f872eca31d42, type: 3}
 --- !u!1 &1422607658
 GameObject:
   m_ObjectHideFlags: 0

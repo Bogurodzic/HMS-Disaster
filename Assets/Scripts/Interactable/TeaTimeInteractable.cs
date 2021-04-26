@@ -17,6 +17,7 @@ public class TeaTimeInteractable : BasicInteractable
     [SerializeField] private Canvas _canvas;
     [SerializeField] private GameObject _textbox;
     [SerializeField] private Image _textboxImage;
+    [SerializeField] private AudioController _audioController;
     private int _difficultCounter = 0;
 
     public override void Update()
@@ -77,6 +78,7 @@ public class TeaTimeInteractable : BasicInteractable
 
     protected override void RunMinigame()
     {
+        _audioController.PlayTeatimeMusic();
         _spriteRenderer.sprite = tableWithoutCups;
 
         foreach (var playerController in _playerControllers)
@@ -122,6 +124,7 @@ public class TeaTimeInteractable : BasicInteractable
         _textbox.SetActive(false);
         IncreaseLevel();
         Score.AddScore(DifficultLevel.GetDifficultLevel() * 5);
+        _audioController.PlayNormalMusic();
     }
 
     private void IncreaseLevel()
