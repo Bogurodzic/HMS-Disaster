@@ -10,6 +10,7 @@ public class ShipHitpoints : MonoBehaviour
     public AudioClip _death;
     
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private CameraShake _cameraShake;
     
     private int _currentHipoints;
 
@@ -33,6 +34,7 @@ public class ShipHitpoints : MonoBehaviour
         _currentHipoints = _currentHipoints - damage;
         _audioSource.clip = _damage;
         _audioSource.Play();
+        _cameraShake.Shake();
     }
 
     public int GetMaximumHitpoints()

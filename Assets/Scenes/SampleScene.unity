@@ -1434,6 +1434,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1449,6 +1450,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7ae96e7836848109184c1300db317b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 519420032}
+  camShakeDuration: 0
+  camShakeAmount: 0.01
+  decrementFactor: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1964,6 +1981,7 @@ MonoBehaviour:
   _damage: {fileID: 8300000, guid: d5405e108644e4b3cad564d7244f2f0b, type: 3}
   _death: {fileID: 8300000, guid: f3fd9210272744f9991d3c069d628ae8, type: 3}
   _audioSource: {fileID: 671433535}
+  _cameraShake: {fileID: 519420030}
 --- !u!212 &671433532
 SpriteRenderer:
   m_ObjectHideFlags: 0
