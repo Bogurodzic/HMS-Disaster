@@ -18,6 +18,7 @@ public class TeaTimeInteractable : BasicInteractable
     [SerializeField] private GameObject _textbox;
     [SerializeField] private Image _textboxImage;
     [SerializeField] private AudioController _audioController;
+    [SerializeField] private AudioSource _audioSource;
     private int _difficultCounter = 0;
 
     public override void Update()
@@ -66,6 +67,7 @@ public class TeaTimeInteractable : BasicInteractable
     {
         if (_state == InteractableState.Activated)
         {
+            _audioSource.Play();
             foreach (var playerController in _playerControllers)
             {
                 playerController.StopDrinking();
