@@ -98,6 +98,7 @@ public class TeaTimeInteractable : BasicInteractable
         DeactivateMachine();
         _text.text = "";
         IncreaseLevel();
+        Score.AddScore(DifficultLevel.GetDifficultLevel() * 5);
     }
 
     private void IncreaseLevel()

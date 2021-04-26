@@ -83,6 +83,7 @@ public class HelmInteractable : BasicInteractable
             if (success)
             {
                 DeactivateMachine();
+                Score.AddScore(DifficultLevel.GetDifficultLevel());
             }
             else
             {

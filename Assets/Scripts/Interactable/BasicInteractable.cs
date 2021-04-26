@@ -69,6 +69,7 @@ public class BasicInteractable : MonoBehaviour
             if (success)
             {
                 DeactivateMachine();
+                Score.AddScore(DifficultLevel.GetDifficultLevel());
             }
             else
             {
