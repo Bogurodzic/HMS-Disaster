@@ -14,6 +14,12 @@ public class TeaTimeInteractable : BasicInteractable
     [SerializeField] private Text _text;
     [SerializeField] private Canvas _canvas;
     private int _difficultCounter = 0;
+
+    public override void Update()
+    {
+        
+    }
+
     protected override void AddPlayerToOperateMachine(PlayerController playerController)
     {
         playerController.SetPlayerStatus(PlayerStatus.Busy);

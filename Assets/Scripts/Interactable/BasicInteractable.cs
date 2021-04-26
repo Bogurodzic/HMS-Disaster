@@ -87,7 +87,10 @@ public class BasicInteractable : MonoBehaviour
 
     public virtual void DeactivateMachine()
     {
-        ActiveMachines.RemoveActiveMachine();
+        if (machine.gameType != GameType.TEA)
+        {
+            ActiveMachines.RemoveActiveMachine();
+        }
         
         _alarmController.TurnOff();
         _activationStarted = false;
