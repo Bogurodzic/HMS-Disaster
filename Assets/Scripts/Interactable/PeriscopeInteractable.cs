@@ -30,7 +30,7 @@ public class PeriscopeInteractable : BasicInteractable
         _playerControllers.Clear();
         
         Debug.Log("Deactivated periscope");
-        Invoke("ClearActivationStarted", Random.Range(0f, 2f));
+//        Invoke("ClearActivationStarted", Random.Range(0f, 2f));
     }
 
     protected override void RunMinigame()

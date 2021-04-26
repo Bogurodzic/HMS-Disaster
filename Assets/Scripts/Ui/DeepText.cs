@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class DeepText : MonoBehaviour
 {
     [SerializeField] private Text _text;
-    [SerializeField] private ShipDeepController _shipDeepController;
 
     void Start()
     {
@@ -20,6 +19,6 @@ public class DeepText : MonoBehaviour
 
     private void ReloadText()
     {
-        _text.text = _shipDeepController.GetCurrentDeep() + "ft";
+        _text.text = Score.deep + "ft";
     }
 }

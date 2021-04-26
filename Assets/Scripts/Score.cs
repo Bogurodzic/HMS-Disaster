@@ -6,6 +6,7 @@ public static class Score
 {
     private static float _score;
     private static float _currentScoreMultiplier = 1.5f;
+    public static int deep = 0;
 
     public static void AddScore(int score)
     {

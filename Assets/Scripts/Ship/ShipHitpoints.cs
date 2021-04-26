@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShipHitpoints : MonoBehaviour
 {
@@ -36,6 +37,15 @@ public class ShipHitpoints : MonoBehaviour
         _audioSource.clip = _damage;
         _audioSource.Play();
         _cameraShake.Shake();
+        if (_currentHipoints <= 0)
+        {
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 
     public int GetMaximumHitpoints()

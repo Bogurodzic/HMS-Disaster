@@ -17,6 +17,7 @@ public class ShipDeepController : MonoBehaviour
         if(_timer >= 1)
         {
             _deepMeter += 1;
+            Score.deep += 1;
             Score.AddScore(1);
             _timer = 0;
         }

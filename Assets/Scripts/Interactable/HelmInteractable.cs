@@ -14,7 +14,7 @@ public class HelmInteractable : BasicInteractable
     {
         if (!_activationStarted)
         {
-            if ( Random.Range(1, 100) <= DifficultLevel.PercentChanceForActivatingNextMachine())
+            if ( Random.Range(1, 100) <= DifficultLevel.PercentChanceForActivatingNextMachine() && Random.Range(1, 100) > 75)
             {
                 ActiveMachines.AddActiveMachine();
                 _activationStarted = true;
@@ -65,7 +65,7 @@ public class HelmInteractable : BasicInteractable
         _playerControllers.Clear();
         
         Debug.Log("Deactivated helm");
-        Invoke("ClearActivationStarted", Random.Range(0f, 2f));
+        Invoke("ClearActivationStarted", Random.Range(0f, 5f));
     }
     
     public override void Interact(PlayerController playerController)
