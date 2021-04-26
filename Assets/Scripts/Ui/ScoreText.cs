@@ -19,6 +19,6 @@ public class ScoreText : MonoBehaviour
 
     private void ReloadText()
     {
-        _text.text = "Score: " + Score.GetScore();
+        _text.text = "Score: " + (int) Score.GetScore();
     }
 }

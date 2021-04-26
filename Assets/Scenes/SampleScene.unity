@@ -814,8 +814,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 467.61484, y: 467.86902}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 440.1, y: 467.86902}
+  m_SizeDelta: {x: 161.81891, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &303392281
 MonoBehaviour:
@@ -856,7 +856,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1659,7 +1659,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 433, y: 470}
-  m_SizeDelta: {x: 200, y: 60}
+  m_SizeDelta: {x: 215.4491, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &562919026
 MonoBehaviour:
@@ -2641,6 +2641,7 @@ MonoBehaviour:
   satisfiedQueen: {fileID: 21300000, guid: 08a30081f10e34064ae7ed22c39ddf54, type: 3}
   neutralQueen: {fileID: 21300000, guid: 7da89868a76e540f0a1a70f95bf25519, type: 3}
   pissedQueen: {fileID: 21300000, guid: 8f12b7546417c415480b6bfaca20cc5a, type: 3}
+  pissLevel: 20
   _spriteRenderer: {fileID: 989253731}
 --- !u!114 &989253731
 MonoBehaviour:

@@ -4,12 +4,22 @@ using UnityEngine;
 
 public static class DifficultLevel
 {
-    private static int _difficultLevel = 50;
+    private static int _difficultLevel = 1;
 
 
     public static int GetDifficultLevel()
     {
         return _difficultLevel;
+    }
+
+    public static void AddDifficultLevel(int difficultLevel)
+    {
+        _difficultLevel += difficultLevel;
+    }
+    
+    public static void SubstractDifficultLevel(int difficultLevel)
+    {
+        _difficultLevel -= difficultLevel;
     }
 
     public static void IncreaseDifficultLevel()

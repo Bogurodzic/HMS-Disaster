@@ -8,7 +8,7 @@ public class QuunOMeter : MonoBehaviour
     public Sprite satisfiedQueen;
     public Sprite neutralQueen;
     public Sprite pissedQueen;
-    
+    public int pissLevel = 20;
     
     [SerializeField] private Image _spriteRenderer;
 
@@ -27,6 +27,9 @@ public class QuunOMeter : MonoBehaviour
     {
         if (_satisfactionLevel < 3)
         {
+            if (_satisfactionLevel == 1)
+                DifficultLevel.SubstractDifficultLevel(pissLevel);
+            
             if (!_wasPissedOnce)
             {
                 _satisfactionLevel += 1;
@@ -43,6 +46,10 @@ public class QuunOMeter : MonoBehaviour
     {
         if (_satisfactionLevel > 1)
         {
+            if (_satisfactionLevel == 2)
+            {
+                DifficultLevel.AddDifficultLevel(pissLevel);
+            }
             _satisfactionLevel -= 1;
             _wasPissedOnce = true;
             Score.SetMultiplier(1);
