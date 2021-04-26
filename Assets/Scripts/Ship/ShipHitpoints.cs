@@ -16,6 +16,7 @@ public class ShipHitpoints : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = false;
     }
 
     void Update()
