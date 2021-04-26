@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class TeaTimeInteractable : BasicInteractable
 {
     public float teatimeDuration;
+    public Sprite tableWithCups;
+    public Sprite tableWithoutCups;
 
     [SerializeField] private Text _text;
     [SerializeField] private Canvas _canvas;
@@ -29,6 +31,7 @@ public class TeaTimeInteractable : BasicInteractable
         _alarmController.TurnOn();
         _state = InteractableState.Activated;
         //Invoke("Explode", teatimeDuration);
+        _spriteRenderer.sprite = tableWithoutCups;
     }
 
     protected override void Explode()
@@ -38,9 +41,13 @@ public class TeaTimeInteractable : BasicInteractable
 
     public void TeaTimeEnd()
     {
-        foreach (var playerController in _playerControllers)
+        if (_state == InteractableState.Activated)
         {
-            playerController.StopDrinking();
+            foreach (var playerController in _playerControllers)
+            {
+                playerController.StopDrinking();
+            } 
+            _spriteRenderer.sprite = tableWithCups;
         }
     }
 
@@ -79,7 +86,7 @@ public class TeaTimeInteractable : BasicInteractable
             playerController.StopDrinking();
             playerController.SetPlayerStatus(PlayerStatus.Free);
         }
-        
+        _spriteRenderer.sprite = tableWithCups;
         DeactivateMachine();
         _text.text = "";
     }

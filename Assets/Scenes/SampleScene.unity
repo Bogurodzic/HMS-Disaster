@@ -224,6 +224,8 @@ MonoBehaviour:
   _shipHitpoints: {fileID: 671433531}
   _alarmController: {fileID: 334452861}
   teatimeDuration: 10
+  tableWithCups: {fileID: 21300000, guid: 657c4335580f74e2184c58bdb9195dc9, type: 3}
+  tableWithoutCups: {fileID: 21300000, guid: a9d320121479e44d490be84af120324f, type: 3}
   _text: {fileID: 11627101}
   _canvas: {fileID: 535737431}
 --- !u!212 &78465663 stripped
