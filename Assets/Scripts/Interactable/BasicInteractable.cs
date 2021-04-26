@@ -87,7 +87,7 @@ public class BasicInteractable : MonoBehaviour
 
     public virtual void DeactivateMachine()
     {
-        if (machine.gameType != GameType.TEA)
+        if (machine.gameType != GameType.TEA && machine.gameType != GameType.PERISCOPE)
         {
             ActiveMachines.RemoveActiveMachine();
         }

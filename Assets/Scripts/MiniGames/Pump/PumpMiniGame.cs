@@ -24,6 +24,9 @@ public class PumpMiniGame : MonoBehaviour
             if (!ballInZone)
                 _pressReady = true;
         };
+
+        requiredSuccess = 3 + DifficultLevel.GetDifficultLevel() / 5;
+        Debug.Log("Required success: " + requiredSuccess);
     }
 
     void Update()
