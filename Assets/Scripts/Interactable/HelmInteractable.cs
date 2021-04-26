@@ -14,9 +14,13 @@ public class HelmInteractable : BasicInteractable
     {
         if (!_activationStarted)
         {
-            _activationStarted = true;
-            float activationTime = Random.Range(machine.activationInterval/2, machine.activationInterval);
-            Invoke("ActivateMachine", activationTime);
+            if ( Random.Range(1, 100) <= DifficultLevel.PercentChanceForActivatingNextMachine())
+            {
+                ActiveMachines.AddActiveMachine();
+                _activationStarted = true;
+                float activationTime = Random.Range(0, machine.activationInterval);
+                Invoke("ActivateMachine", activationTime);
+            }
         }
         
 
@@ -42,6 +46,8 @@ public class HelmInteractable : BasicInteractable
 
     public override void DeactivateMachine()
     {
+        ActiveMachines.RemoveActiveMachine();
+
         _alarmController.TurnOff();
         _activationStarted = false;
         _state = InteractableState.Deactivated;
