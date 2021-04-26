@@ -19,13 +19,26 @@ public class TeaTimeInteractable : BasicInteractable
     {
         
     }
-
+    
     protected override void AddPlayerToOperateMachine(PlayerController playerController)
     {
-        playerController.SetPlayerStatus(PlayerStatus.Busy);
-        _playerControllers.Add(playerController);
-        Debug.Log("PLAYER SIEDZI");
-        playerController.Sit();
+        if (_playerControllers.Count == 0)
+        {
+            playerController.SetPlayerStatus(PlayerStatus.Busy);
+            _playerControllers.Add(playerController); 
+            playerController.Sit();
+        }
+
+        if (_playerControllers.Count > 0)
+        {
+            if (_playerControllers[0].downButton != playerController.downButton)
+            {
+                playerController.SetPlayerStatus(PlayerStatus.Busy);
+                _playerControllers.Add(playerController); 
+                playerController.Sit();
+            }
+        }
+
     }
 
     public override void ActivateMachine()

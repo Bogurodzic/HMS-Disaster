@@ -29,7 +29,7 @@ public class BasicInteractable : MonoBehaviour
             {
                 ActiveMachines.AddActiveMachine();
                 _activationStarted = true;
-                float activationTime = Random.Range(0, machine.activationInterval);
+                float activationTime = Random.Range(machine.activationInterval/3, machine.activationInterval);
                 Invoke("ActivateMachine", activationTime);
             }
         }
@@ -50,8 +50,21 @@ public class BasicInteractable : MonoBehaviour
 
     protected virtual void AddPlayerToOperateMachine(PlayerController playerController)
     {
-        playerController.SetPlayerStatus(PlayerStatus.Busy);
-        _playerControllers.Add(playerController);
+        if (_playerControllers.Count == 0)
+        {
+            playerController.SetPlayerStatus(PlayerStatus.Busy);
+            _playerControllers.Add(playerController); 
+        }
+
+        if (_playerControllers.Count > 0)
+        {
+            if (_playerControllers[0].downButton != playerController.downButton)
+            {
+                playerController.SetPlayerStatus(PlayerStatus.Busy);
+                _playerControllers.Add(playerController); 
+            }
+        }
+
     }
 
     protected bool CheckIfMachineCanBeStarted()

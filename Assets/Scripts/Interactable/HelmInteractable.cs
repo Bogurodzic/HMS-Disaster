@@ -18,7 +18,7 @@ public class HelmInteractable : BasicInteractable
             {
                 ActiveMachines.AddActiveMachine();
                 _activationStarted = true;
-                float activationTime = Random.Range(0, machine.activationInterval);
+                float activationTime = Random.Range(machine.activationInterval/3, machine.activationInterval);
                 Invoke("ActivateMachine", activationTime);
             }
         }
