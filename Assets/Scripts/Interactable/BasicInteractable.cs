@@ -75,7 +75,7 @@ public class BasicInteractable : MonoBehaviour
         };
     }
 
-    protected virtual void ActivateMachine()
+    public virtual void ActivateMachine()
     {
         _alarmController.TurnOn();
         _state = InteractableState.Activated;
@@ -87,7 +87,6 @@ public class BasicInteractable : MonoBehaviour
         _alarmController.TurnOff();
         _activationStarted = false;
         _state = InteractableState.Deactivated;
-        _spriteRenderer.color = Color.white;
         
         foreach (var playerController in _playerControllers)
         {
@@ -97,7 +96,7 @@ public class BasicInteractable : MonoBehaviour
         _playerControllers.Clear();
     }
 
-    protected void Explode()
+    protected virtual void Explode()
     {
         if (_state == InteractableState.Activated)
         {

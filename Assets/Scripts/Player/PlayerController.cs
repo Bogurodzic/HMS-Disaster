@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
     public void StopDrinking()
     {
-        _animator.SetBool("isDrinking", false);
-        _animator.SetBool("isSitting", false);
+            _animator.SetBool("isDrinking", false);
+            _animator.SetBool("isSitting", false);
     }
 }

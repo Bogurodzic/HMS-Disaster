@@ -32,7 +32,7 @@ public class HelmInteractable : BasicInteractable
         }
     }
     
-    protected override void ActivateMachine()
+    public override void ActivateMachine()
     {
         _state = InteractableState.Activated;
         _periscopeInteractable.TurnOn();

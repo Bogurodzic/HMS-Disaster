@@ -11,6 +11,8 @@ TagManager:
   - Zone
   - Rock
   - End
+  - Clock
+  - Arrow
   layers:
   - Default
   - TransparentFX

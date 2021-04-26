@@ -18,7 +18,32 @@ public class TeaTimeInteractable : BasicInteractable
         Debug.Log("PLAYER SIEDZI");
         playerController.Sit();
     }
-    
+
+    public override void ActivateMachine()
+    {
+        
+    }
+
+    public void TeaTime()
+    {
+        _alarmController.TurnOn();
+        _state = InteractableState.Activated;
+        //Invoke("Explode", teatimeDuration);
+    }
+
+    protected override void Explode()
+    {
+        
+    }
+
+    public void TeaTimeEnd()
+    {
+        foreach (var playerController in _playerControllers)
+        {
+            playerController.StopDrinking();
+        }
+    }
+
     protected override void RunMinigame()
     {
         foreach (var playerController in _playerControllers)
