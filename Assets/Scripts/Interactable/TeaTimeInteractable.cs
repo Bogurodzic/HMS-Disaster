@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class TeaTimeInteractable : BasicInteractable
 {
+    public float difficultIncreaseFrequency;
     public float teatimeDuration;
     public Sprite tableWithCups;
     public Sprite tableWithoutCups;
 
     [SerializeField] private Text _text;
     [SerializeField] private Canvas _canvas;
-
+    private int _difficultCounter = 0;
     protected override void AddPlayerToOperateMachine(PlayerController playerController)
     {
         playerController.SetPlayerStatus(PlayerStatus.Busy);
@@ -48,6 +49,7 @@ public class TeaTimeInteractable : BasicInteractable
                 playerController.StopDrinking();
             } 
             _spriteRenderer.sprite = tableWithCups;
+            IncreaseLevel();
         }
     }
 
@@ -89,5 +91,16 @@ public class TeaTimeInteractable : BasicInteractable
         _spriteRenderer.sprite = tableWithCups;
         DeactivateMachine();
         _text.text = "";
+        IncreaseLevel();
+    }
+
+    private void IncreaseLevel()
+    {
+        _difficultCounter = _difficultCounter + 1;
+        if (_difficultCounter == difficultIncreaseFrequency)
+        {
+            DifficultLevel.IncreaseDifficultLevel();
+            _difficultCounter = 0;
+        }
     }
 }
