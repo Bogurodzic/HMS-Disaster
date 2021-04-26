@@ -68,6 +68,7 @@ public class TeaTimeInteractable : BasicInteractable
             foreach (var playerController in _playerControllers)
             {
                 playerController.StopDrinking();
+                playerController.SetPlayerStatus(PlayerStatus.Free);
             } 
             _spriteRenderer.sprite = tableWithCups;
             IncreaseLevel();
