@@ -7,9 +7,12 @@ using UnityEngine;
 public class PlayerDoorInteraction : MonoBehaviour
 {
     public float doorTravelDuration = 2;
+    public AudioClip doorSound;
 
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private Rigidbody2D _playerRigidbody2D;
+    [SerializeField] private AudioSource _audioSource;
+    
     private GameObject _nearbyDoors;
     private Vector3 _exitPosition;
     
@@ -40,6 +43,8 @@ public class PlayerDoorInteraction : MonoBehaviour
 
     private void UseDoor(Door door)
     {
+        _audioSource.clip = doorSound;
+        _audioSource.Play();
         _exitPosition = door.exitDoors.transform.position;
         transform.position = new Vector3(9999, 9999, 9999);
         Invoke("ExitDoor", doorTravelDuration);
@@ -47,6 +52,8 @@ public class PlayerDoorInteraction : MonoBehaviour
 
     private void ExitDoor()
     {
+        _audioSource.clip = doorSound;
+        _audioSource.Play();
         _playerRigidbody2D.velocity = Vector2.zero;
         transform.position = _exitPosition;
     }

@@ -1086,6 +1086,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6920273989403111058, guid: 183a744f4f6bd4561976bb58028969d2,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 183a744f4f6bd4561976bb58028969d2, type: 3}
 --- !u!1001 &387885167
@@ -1725,6 +1730,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3384019571320281098, guid: f1359ad1ca6f8451c892066b65997cdb,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 89bbbc6ebe12b4aeeb21474ed3bbafa2, type: 3}
     - target: {fileID: 8214410896145260200, guid: f1359ad1ca6f8451c892066b65997cdb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4243,6 +4253,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920273989403111058, guid: 183a744f4f6bd4561976bb58028969d2,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 183a744f4f6bd4561976bb58028969d2, type: 3}
