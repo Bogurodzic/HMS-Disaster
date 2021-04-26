@@ -22,7 +22,7 @@ public class AudioController : MonoBehaviour
     {
         _audioSoure.Stop();
         _audioSoure.clip = teaTimeMusic;
-        _audioSoure.loop = true;
+        _audioSoure.loop = false;
         _audioSoure.Play();
 
     }
