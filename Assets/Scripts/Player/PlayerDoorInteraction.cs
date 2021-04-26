@@ -56,6 +56,7 @@ public class PlayerDoorInteraction : MonoBehaviour
         if (other.gameObject.CompareTag("Door"))
         {
             _nearbyDoors = other.gameObject;
+            other.gameObject.GetComponent<Door>().ShowDoorIndicator();
         }
     }
 
@@ -64,6 +65,7 @@ public class PlayerDoorInteraction : MonoBehaviour
         if (other.gameObject.CompareTag("Door"))
         {
             _nearbyDoors = null;
+            other.gameObject.GetComponent<Door>().HideDoorIndicator();
         }
     }
 }

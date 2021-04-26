@@ -7,7 +7,7 @@ public class Door : MonoBehaviour
 {
     public GameObject exitDoors;
     public DoorFloor doorFloor;
-    
+    [SerializeField] private GameObject _doorIndicator;
     void Start()
     {
         
@@ -16,5 +16,15 @@ public class Door : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ShowDoorIndicator()
+    {
+        _doorIndicator.SetActive(true);
+    }
+
+    public void HideDoorIndicator()
+    {
+        _doorIndicator.SetActive(false);
     }
 }
