@@ -10,9 +10,13 @@ public class TeaTimeInteractable : BasicInteractable
     public float teatimeDuration;
     public Sprite tableWithCups;
     public Sprite tableWithoutCups;
-
+    public Sprite bigTextbox;
+    public Sprite smallTextbox;
+    
     [SerializeField] private Text _text;
     [SerializeField] private Canvas _canvas;
+    [SerializeField] private GameObject _textbox;
+    [SerializeField] private Image _textboxImage;
     private int _difficultCounter = 0;
 
     public override void Update()
@@ -87,17 +91,21 @@ public class TeaTimeInteractable : BasicInteractable
 
     private void FirstText()
     {
+        _textbox.SetActive(true);
         _text.text = "I bet tomorrow will be raining...";
+        ChangeTextboxWidth(_text.text.Length);
     }
 
     private void SecondText()
     {
         _text.text = "Why?";
+        ChangeTextboxWidth(_text.text.Length);
     }
 
     private void ThirdText()
     {
-        _text.text = "Because pressure has changed.";
+        _text.text = "Because pressure has changed";
+        ChangeTextboxWidth(_text.text.Length);
     }
 
     private void EndDrinking()
@@ -110,6 +118,7 @@ public class TeaTimeInteractable : BasicInteractable
         _spriteRenderer.sprite = tableWithCups;
         DeactivateMachine();
         _text.text = "";
+        _textbox.SetActive(false);
         IncreaseLevel();
         Score.AddScore(DifficultLevel.GetDifficultLevel() * 5);
     }
@@ -121,6 +130,20 @@ public class TeaTimeInteractable : BasicInteractable
         {
             DifficultLevel.IncreaseDifficultLevel();
             _difficultCounter = 0;
+        }
+    }
+
+    private void ChangeTextboxWidth(int length)
+    {
+        if (length > 10)
+        {
+            _textbox.GetComponent<RectTransform>().sizeDelta = new Vector2 (456, 136);
+            _textboxImage.sprite = bigTextbox;
+        }
+        else
+        {
+            _textbox.GetComponent<RectTransform>().sizeDelta = new Vector2 (304, 136);
+            _textboxImage.sprite = smallTextbox;
         }
     }
 }
