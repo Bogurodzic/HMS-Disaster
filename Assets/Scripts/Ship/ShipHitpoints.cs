@@ -22,6 +22,7 @@ public class ShipHitpoints : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
+        DialoguesWrapper.InitDialogues();
     }
 
     void Update()

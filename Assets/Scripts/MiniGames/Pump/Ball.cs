@@ -13,7 +13,7 @@ public class Ball : MonoBehaviour
     
     private Vector3 zAxis = new Vector3(0, 0, 1);
 
-    void Update()
+    void FixedUpdate()
     {
         transform.RotateAround(target.position, zAxis, speed);
     }

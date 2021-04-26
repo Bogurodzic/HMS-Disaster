@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class TeaTimeInteractable : BasicInteractable
 {
@@ -21,6 +23,7 @@ public class TeaTimeInteractable : BasicInteractable
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private QuunOMeter _quunOMeter;
     private int _difficultCounter = 0;
+    private List<String> _currentDialogue = new List<string>();
 
     public override void Update()
     {
@@ -91,6 +94,8 @@ public class TeaTimeInteractable : BasicInteractable
         }
         
         _alarmController.TurnOff();
+        _currentDialogue = DialoguesWrapper.dialogues[Random.Range(0, DialoguesWrapper.dialogues.Count)];
+        
         FirstText();
         Invoke("SecondText", teatimeDuration/3);
         Invoke("ThirdText", (teatimeDuration/3) * 2);
@@ -101,19 +106,19 @@ public class TeaTimeInteractable : BasicInteractable
     {
         _alarmController.TurnOff();
         _textbox.SetActive(true);
-        _text.text = "I bet tomorrow will be raining...";
+        _text.text = _currentDialogue[0];
         ChangeTextboxWidth(_text.text.Length);
     }
 
     private void SecondText()
     {
-        _text.text = "Why?";
+        _text.text = _currentDialogue[1];
         ChangeTextboxWidth(_text.text.Length);
     }
 
     private void ThirdText()
     {
-        _text.text = "Because pressure has changed";
+        _text.text = _currentDialogue[2];
         ChangeTextboxWidth(_text.text.Length);
     }
 
