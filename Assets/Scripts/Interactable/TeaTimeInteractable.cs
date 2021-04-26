@@ -30,7 +30,6 @@ public class TeaTimeInteractable : BasicInteractable
 
     public override void ActivateMachine()
     {
-        
     }
 
     public void TeaTime()
@@ -38,7 +37,6 @@ public class TeaTimeInteractable : BasicInteractable
         _alarmController.TurnOn();
         _state = InteractableState.Activated;
         //Invoke("Explode", teatimeDuration);
-        _spriteRenderer.sprite = tableWithoutCups;
     }
 
     protected override void Explode()
@@ -61,6 +59,8 @@ public class TeaTimeInteractable : BasicInteractable
 
     protected override void RunMinigame()
     {
+        _spriteRenderer.sprite = tableWithoutCups;
+
         foreach (var playerController in _playerControllers)
         {
             playerController.Drink();
