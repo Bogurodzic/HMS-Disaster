@@ -2987,7 +2987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47845c6130e14ef9a3ea24270e5c536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundSpeed: 0.5
+  backgroundSpeed: 0.45
   _boxCollider2D: {fileID: 1071193323}
 --- !u!4 &1071193322
 Transform:
@@ -4116,7 +4116,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 05ecffdd7b26d4884ac3b852576135fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

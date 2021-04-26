@@ -106,7 +106,6 @@ public class BasicInteractable : MonoBehaviour
         }
         
         _alarmController.TurnOff();
-        _activationStarted = false;
         _state = InteractableState.Deactivated;
         
         foreach (var playerController in _playerControllers)
@@ -115,6 +114,13 @@ public class BasicInteractable : MonoBehaviour
         }
         
         _playerControllers.Clear();
+        Invoke("ClearActivationStarted", Random.Range(0f, 2f));
+    }
+
+    public void ClearActivationStarted()
+    {
+        _activationStarted = false;
+
     }
 
     protected virtual void Explode()

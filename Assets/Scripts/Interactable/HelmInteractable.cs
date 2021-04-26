@@ -65,7 +65,7 @@ public class HelmInteractable : BasicInteractable
         _playerControllers.Clear();
         
         Debug.Log("Deactivated helm");
-
+        Invoke("ClearActivationStarted", Random.Range(0f, 2f));
     }
     
     public override void Interact(PlayerController playerController)
