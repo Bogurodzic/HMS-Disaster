@@ -12,6 +12,7 @@ public class Rock : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(0, rockSpeed * Time.deltaTime, 0);
+        float currentSpeed = rockSpeed + (rockSpeed * (DifficultLevel.GetDifficultLevel() / 50));
+        transform.Translate(0, currentSpeed * Time.deltaTime, 0);
     }
 }

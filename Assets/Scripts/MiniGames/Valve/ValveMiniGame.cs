@@ -50,12 +50,12 @@ public class ValveMiniGame : MonoBehaviour
     {
         if (Input.GetKeyDown(_playerControllers[0].activateButton))
         {
-            _valveSliders[0].value += valveProgressOnButtonPress / 100;
+            _valveSliders[0].value += (valveProgressOnButtonPress / 100) - (valveProgressOnButtonPress / 10000 * DifficultLevel.GetDifficultLevel());
         }
             
         if (Input.GetKeyDown(_playerControllers[1].activateButton))
         {
-            _valveSliders[1].value += valveProgressOnButtonPress / 100;
+            _valveSliders[1].value += (valveProgressOnButtonPress / 100) - (valveProgressOnButtonPress / 10000 * DifficultLevel.GetDifficultLevel());
         }
     }
 
