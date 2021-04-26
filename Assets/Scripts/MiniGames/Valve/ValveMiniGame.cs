@@ -13,6 +13,7 @@ public class ValveMiniGame : MonoBehaviour
     public event Action<bool> OnSuccess = isSuccess => { };
 
     [SerializeField] private Slider[] _valveSliders;
+    [SerializeField] private AudioSource _audioSource;
     private List<PlayerController> _playerControllers;
     private bool _initalised = true;
     void Start()
@@ -51,11 +52,13 @@ public class ValveMiniGame : MonoBehaviour
         if (Input.GetKeyDown(_playerControllers[0].activateButton))
         {
             _valveSliders[0].value += (valveProgressOnButtonPress / 100) - (valveProgressOnButtonPress / 10000 * DifficultLevel.GetDifficultLevel());
+            _audioSource.Play();
         }
             
         if (Input.GetKeyDown(_playerControllers[1].activateButton))
         {
             _valveSliders[1].value += (valveProgressOnButtonPress / 100) - (valveProgressOnButtonPress / 10000 * DifficultLevel.GetDifficultLevel());
+            _audioSource.Play();
         }
     }
 
