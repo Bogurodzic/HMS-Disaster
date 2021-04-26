@@ -10,6 +10,7 @@ public class PumpMiniGame : MonoBehaviour
 
 
     [SerializeField] private Ball _ball;
+    [SerializeField] private AudioSource _audioSource;
     private PlayerController _playerController;
     private bool _ballInZone = false;
     private bool _initalised = false;
@@ -35,6 +36,7 @@ public class PumpMiniGame : MonoBehaviour
         {
             if (_ballInZone)
             {
+                _audioSource.Play();
                 _pressReady = false;
                 _currentSuccess = _currentSuccess + 1;
 

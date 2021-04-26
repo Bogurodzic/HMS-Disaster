@@ -3709,7 +3709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e68424201bf4a2280974569b9e558f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 0.02
   target: {fileID: 2013200099}
   _teaTimeInteractable: {fileID: 78465661}
   _alert: {fileID: 809653117}
