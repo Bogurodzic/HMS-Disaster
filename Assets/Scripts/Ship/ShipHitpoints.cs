@@ -6,7 +6,11 @@ using UnityEngine;
 public class ShipHitpoints : MonoBehaviour
 {
     public int maximumHitpoints;
-
+    public AudioClip _damage;
+    public AudioClip _death;
+    
+    [SerializeField] private AudioSource _audioSource;
+    
     private int _currentHipoints;
 
     private void Awake()
@@ -27,6 +31,8 @@ public class ShipHitpoints : MonoBehaviour
     public void RecieveDamage(int damage)
     {
         _currentHipoints = _currentHipoints - damage;
+        _audioSource.clip = _damage;
+        _audioSource.Play();
     }
 
     public int GetMaximumHitpoints()
