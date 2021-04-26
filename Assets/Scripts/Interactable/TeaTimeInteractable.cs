@@ -14,7 +14,8 @@ public class TeaTimeInteractable : BasicInteractable
     public Sprite tableWithoutCups;
     public Sprite bigTextbox;
     public Sprite smallTextbox;
-    
+
+    [SerializeField] private GameObject _exlamactionMark;
     [SerializeField] private Text _text;
     [SerializeField] private Canvas _canvas;
     [SerializeField] private GameObject _textbox;
@@ -94,6 +95,7 @@ public class TeaTimeInteractable : BasicInteractable
         }
         
         _alarmController.TurnOff();
+        _exlamactionMark.SetActive(false);
         _currentDialogue = DialoguesWrapper.dialogues[Random.Range(0, DialoguesWrapper.dialogues.Count)];
         
         FirstText();
