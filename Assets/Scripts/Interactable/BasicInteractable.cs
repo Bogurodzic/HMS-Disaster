@@ -10,6 +10,7 @@ public class BasicInteractable : MonoBehaviour
     [SerializeField] protected GameObject _minigamePanelPrefab;
     [SerializeField] protected SpriteRenderer _spriteRenderer;
     [SerializeField] protected ShipHitpoints _shipHitpoints;
+    [SerializeField] protected AlarmController _alarmController;
     
     protected InteractableState _state = InteractableState.Deactivated;
     
@@ -29,17 +30,7 @@ public class BasicInteractable : MonoBehaviour
             Invoke("ActivateMachine", activationTime);
         }
 
-        if (_state == InteractableState.Activated)
-        {
-            if (_spriteRenderer.color == Color.red)
-            {
-                _spriteRenderer.color = Color.blue;
-            }
-            else
-            {
-                _spriteRenderer.color = Color.red;
-            }
-        }
+
     }
 
     public virtual void Interact(PlayerController playerController)
@@ -86,12 +77,14 @@ public class BasicInteractable : MonoBehaviour
 
     protected virtual void ActivateMachine()
     {
+        _alarmController.TurnOn();
         _state = InteractableState.Activated;
         Invoke("Explode", machine.waitInterval);
     }
 
     public virtual void DeactivateMachine()
     {
+        _alarmController.TurnOff();
         _activationStarted = false;
         _state = InteractableState.Deactivated;
         _spriteRenderer.color = Color.white;

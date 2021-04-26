@@ -18,18 +18,7 @@ public class HelmInteractable : BasicInteractable
             float activationTime = Random.Range(machine.activationInterval/2, machine.activationInterval);
             Invoke("ActivateMachine", activationTime);
         }
-
-        if (_state == InteractableState.Activated)
-        {
-            if (_spriteRenderer.color == Color.red)
-            {
-                _spriteRenderer.color = Color.blue;
-            }
-            else
-            {
-                _spriteRenderer.color = Color.red;
-            }
-        }
+        
 
         if (!_helmMinigameReadyToStart && !_helmMinigameStarted && _periscopeInteractable.GetState() == InteractableState.Blocked && GetState() == InteractableState.Blocked)
         {
@@ -46,12 +35,14 @@ public class HelmInteractable : BasicInteractable
     protected override void ActivateMachine()
     {
         _state = InteractableState.Activated;
-        _periscopeInteractable.SetState(InteractableState.Activated);
+        _periscopeInteractable.TurnOn();
+        _alarmController.TurnOn();
         Invoke("Explode", machine.waitInterval);
     }
 
     public override void DeactivateMachine()
     {
+        _alarmController.TurnOff();
         _activationStarted = false;
         _state = InteractableState.Deactivated;
         _spriteRenderer.color = Color.white;
