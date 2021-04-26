@@ -7,8 +7,9 @@ public class PumpMiniGame : MonoBehaviour
 {
     public int requiredSuccess = 3;
     public event Action<bool> OnSuccess = isSuccess => { };
+    public Sprite successSprite;
 
-
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Ball _ball;
     [SerializeField] private AudioSource _audioSource;
     private PlayerController _playerController;
@@ -36,6 +37,7 @@ public class PumpMiniGame : MonoBehaviour
         {
             if (_ballInZone)
             {
+                _spriteRenderer.sprite = successSprite;
                 _audioSource.Play();
                 _pressReady = false;
                 _currentSuccess = _currentSuccess + 1;
