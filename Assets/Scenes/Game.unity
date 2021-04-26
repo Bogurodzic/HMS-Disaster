@@ -3242,7 +3242,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 1422607661}
-  _shipDeepController: {fileID: 671433534}
 --- !u!114 &1422607661
 MonoBehaviour:
   m_ObjectHideFlags: 0
