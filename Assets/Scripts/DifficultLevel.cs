@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class DifficultLevel
 {
-    private static int _difficultLevel = 1;
+    private static int _difficultLevel = 30;
 
 
     public static int GetDifficultLevel()

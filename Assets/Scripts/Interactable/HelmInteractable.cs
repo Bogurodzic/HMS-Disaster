@@ -53,6 +53,9 @@ public class HelmInteractable : BasicInteractable
         _state = InteractableState.Deactivated;
         _spriteRenderer.color = Color.white;
         _periscopeInteractable.DeactivateMachine();
+
+        _helmMinigameStarted = false;
+        _helmMinigameReadyToStart = false;
         
         foreach (var playerController in _playerControllers)
         {
@@ -60,6 +63,9 @@ public class HelmInteractable : BasicInteractable
         }
         
         _playerControllers.Clear();
+        
+        Debug.Log("Deactivated helm");
+
     }
     
     public override void Interact(PlayerController playerController)

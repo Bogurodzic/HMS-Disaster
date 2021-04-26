@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using DefaultNamespace;
 using UnityEngine;
 
@@ -14,5 +15,25 @@ public class PeriscopeInteractable : BasicInteractable
     {
         _alarmController.TurnOn();
         SetState(InteractableState.Activated);
+    }
+    
+    public override void DeactivateMachine()
+    {
+        _alarmController.TurnOff();
+        _state = InteractableState.Deactivated;
+        
+        foreach (var playerController in _playerControllers)
+        {
+            playerController.SetPlayerStatus(PlayerStatus.Free);
+        }
+        
+        _playerControllers.Clear();
+        
+        Debug.Log("Deactivated periscope");
+    }
+
+    protected override void RunMinigame()
+    {
+        
     }
 }

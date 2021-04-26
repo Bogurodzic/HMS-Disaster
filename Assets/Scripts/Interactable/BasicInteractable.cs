@@ -23,7 +23,6 @@ public class BasicInteractable : MonoBehaviour
     
     public virtual void Update()
     {
-        Debug.Log(ActiveMachines.GetActiveMachinesQuantity());
         if (!_activationStarted)
         {
             if (Random.Range(1, 100) <= DifficultLevel.PercentChanceForActivatingNextMachine())
