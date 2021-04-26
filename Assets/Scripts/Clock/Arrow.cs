@@ -7,9 +7,9 @@ public class Arrow : MonoBehaviour
 {
     public float speed;
     public Transform target;
-    
     private Vector3 zAxis = new Vector3(0, 0, -1);
     [SerializeField] private TeaTimeInteractable _teaTimeInteractable;
+    [SerializeField] private GameObject _alert;
     void Update()
     {
         transform.RotateAround(target.position, zAxis, speed);
@@ -20,6 +20,7 @@ public class Arrow : MonoBehaviour
         if (other.gameObject.CompareTag("Clock"))
         {
             _teaTimeInteractable.TeaTime();
+            _alert.SetActive(true);
         }
     }
 
@@ -28,6 +29,7 @@ public class Arrow : MonoBehaviour
         if (other.gameObject.CompareTag("Clock"))
         {
             _teaTimeInteractable.TeaTimeEnd();
+            _alert.SetActive(false);
         }
     }
 }
