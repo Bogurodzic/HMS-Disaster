@@ -9,4 +9,9 @@ public class Start : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+
+    public void OnInstructionsClicked()
+    {
+        SceneManager.LoadScene("Instruction");
+    }
 }

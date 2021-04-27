@@ -4272,7 +4272,7 @@ PrefabInstance:
     - target: {fileID: 281429493121138635, guid: 183a744f4f6bd4561976bb58028969d2,
         type: 3}
       propertyPath: activateButton
-      value: 32
+      value: 305
       objectReference: {fileID: 0}
     - target: {fileID: 281429493121138637, guid: 183a744f4f6bd4561976bb58028969d2,
         type: 3}
